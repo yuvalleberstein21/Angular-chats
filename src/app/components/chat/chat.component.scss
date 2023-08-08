@@ -5,6 +5,25 @@
     height: 323px;
     width: 100%;
     padding: 0 4px;
+    ::-webkit-scrollbar {
+      width: 5px;
+      max-height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      max-height: 5px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgba(128, 128, 128, 0.756);
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: gray;
+    }
   }
   &__message {
     min-height: 20px;
@@ -33,8 +52,12 @@
     }
     &--other-user {
       background: #c8c8c8;
-      margin-right: 30px;
+      margin-left: 30px;
       position: relative;
+      margin-right: 8px;
+      display: flex;
+      flex-direction: row-reverse;
+
       &::after {
         content: "";
         width: 0;
@@ -42,11 +65,11 @@
         border-left: 0px solid transparent;
         border-right: 18px solid transparent;
         border-bottom: 20px solid #c8c8c8;
-        transform: rotate(90deg);
+        transform: rotate(-48deg);
         display: block;
         position: absolute;
-        top: -1px;
-        right: -15px;
+        top: -10px;
+        left: -9px;
       }
     }
   }
