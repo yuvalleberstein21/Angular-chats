@@ -1,0 +1,15 @@
+.chat-container {
+  display: flex;
+
+  &__room-list {
+    width: 10rem;
+    margin-right: 2rem;
+    width: 20rem;
+  }
+
+  &__add-room {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+  }
+}
