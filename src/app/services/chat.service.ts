@@ -1,5 +1,6 @@
+import { IChatRoom } from './../models/room.interface';
 import { Injectable } from '@angular/core';
-import { IChatRoom } from '../models';
+import { IMessage } from '../models';
 import { Observable, map } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
@@ -27,5 +28,40 @@ export class ChatService {
           });
         })
       );
+  }
+
+  public getRoomMessages(roomID: string): Observable<Array<IMessage>> {
+    return this._db
+      .collection('rooms')
+      .doc(roomID)
+      .collection('messages')
+      .snapshotChanges()
+      .pipe(
+        map((messages) => {
+          return messages.map((message) => {
+            const data: IMessage = <IMessage>message.payload.doc.data();
+
+            return {
+              ...data,
+              id: message.payload.doc.id,
+            };
+          });
+        })
+      );
+  }
+
+  public addRoom(roomName: string, userId: string): void {
+    this._db.collection('rooms').add({
+      roomName,
+      createdUserId: userId,
+    });
+  }
+
+  public sendMessage(userId: string, body: string, roomId: string): void {
+    this._db.collection('rooms').doc(roomId).collection('messages').add({
+      userId,
+      body,
+      timestamp: new Date().getTime(),
+    });
   }
 }

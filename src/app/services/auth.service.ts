@@ -17,6 +17,7 @@ export class AuthService {
     false
   );
   private userDetails$: Subject<User> = new Subject<User>();
+  private userId: string = '';
 
   constructor(
     private NgFireStore: AngularFirestore,
@@ -34,6 +35,7 @@ export class AuthService {
         const userString: string = JSON.stringify(user);
         localStorage.setItem('user', userString);
         this.isLoggedIn$.next(true);
+        this.userId = user.uid;
       } else {
         localStorage.removeItem('user');
         this.isLoggedIn$.next(false);
@@ -50,6 +52,14 @@ export class AuthService {
       this.router.navigate(['/']);
       this.userDetails$.next(DEFAULT_USER);
     });
+  }
+
+  public getUserData(): Observable<User> {
+    return this.userDetails$.asObservable();
+  }
+
+  public getUserId(): string {
+    return this.userId;
   }
 
   public isLoggedIn(): Observable<boolean> {
