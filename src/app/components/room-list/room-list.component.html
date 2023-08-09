@@ -1,0 +1,12 @@
+<div class="rooms">
+  <h2>My Chats</h2>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option
+      class="rooms__list-option"
+      *ngFor="let room of rooms"
+      [value]="room"
+      [routerLink]="['/chat', room.id]"
+      >{{ room.roomName }}</mat-list-option
+    >
+  </mat-selection-list>
+</div>
