@@ -14,6 +14,7 @@
     color: white;
     height: 500px;
     width: 100%;
+    margin-left: 2rem;
   }
 
   &__icons-icon img {
@@ -40,5 +41,6 @@
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    margin-left: -2rem;
   }
 }
