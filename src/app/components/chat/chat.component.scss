@@ -1,6 +1,5 @@
 .chat {
   margin-top: 2rem;
-  // margin-left: 200px;
 
   mat-form-field input {
     background: transparent !important;
@@ -19,13 +18,11 @@
       max-height: 5px;
     }
 
-    /* Handle */
     ::-webkit-scrollbar-thumb {
       background: rgba(128, 128, 128, 0.756);
       border-radius: 10px;
     }
 
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: gray;
     }

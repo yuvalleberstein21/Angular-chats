@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ChatContainerComponent } from './components/chat-container/chat-container.component';
-import { ChatComponent } from './components/chat/chat.component';
-import { AddRoomComponent } from './components/add-room/add-room.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { RoomListComponent } from './components/room-list/room-list.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
