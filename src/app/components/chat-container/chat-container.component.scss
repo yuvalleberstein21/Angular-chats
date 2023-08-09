@@ -13,3 +13,9 @@
     right: 4rem;
   }
 }
+
+@media screen and (max-width: 390px) {
+  .chat-container__room-list {
+    margin-left: 30px;
+  }
+}

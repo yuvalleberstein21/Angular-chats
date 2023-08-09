@@ -5,7 +5,11 @@
 
   &__link {
     padding: 10px;
-    color: #fff;
+    color: #546e7a;
     text-decoration: none;
+  }
+
+  mat-toolbar {
+    background-color: whitesmoke;
   }
 }

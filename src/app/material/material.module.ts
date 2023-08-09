@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const modules: any = [
   MatButtonModule,
@@ -18,6 +19,7 @@ const modules: any = [
   MatInputModule,
   ScrollingModule,
   MatIconModule,
+  MatGridListModule,
 ];
 
 @NgModule({
